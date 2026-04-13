@@ -1,0 +1,36 @@
+{
+  "description": "Hyperparameter sweep configurations for HAMT tuning",
+  "note": "Run these if the default config shows marginal energy advantage",
+  "sweeps": {
+    "lambda_energy": {
+      "purpose": "Find the energy penalty sweet spot",
+      "values": [0.0001, 0.0005, 0.001, 0.005, 0.01, 0.05],
+      "fixed": {"lambda_habituation": 0.0005, "hidden": 800, "epochs": 15}
+    },
+    "lambda_habituation": {
+      "purpose": "Find the habituation reward sweet spot",
+      "values": [0.0001, 0.0005, 0.001, 0.005, 0.01],
+      "fixed": {"lambda_energy": 0.001, "hidden": 800, "epochs": 15}
+    },
+    "hidden_size": {
+      "purpose": "Test where HAMT advantage is largest (expect larger gain at higher spike rates)",
+      "values": [128, 256, 400, 800],
+      "fixed": {"lambda_energy": 0.001, "lambda_habituation": 0.0005, "epochs": 15}
+    },
+    "target_spike_rate": {
+      "purpose": "Vary the target sparsity level",
+      "values": [0.01, 0.03, 0.05, 0.10],
+      "fixed": {"lambda_energy": 0.001, "lambda_habituation": 0.0005, "hidden": 800, "epochs": 15}
+    },
+    "history_length": {
+      "purpose": "How much temporal context for novelty detection",
+      "values": [2, 5, 10, 15],
+      "fixed": {"lambda_energy": 0.001, "lambda_habituation": 0.0005, "hidden": 800, "epochs": 15}
+    },
+    "aggressive_hamt": {
+      "purpose": "Push HAMT hard to see maximum possible energy reduction",
+      "values": [{"lambda_energy": 0.01, "lambda_habituation": 0.005}],
+      "fixed": {"hidden": 400, "epochs": 20, "target_spike_rate": 0.03}
+    }
+  }
+}

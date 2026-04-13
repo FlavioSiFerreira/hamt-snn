@@ -1,0 +1,61 @@
+# Private / non-code material excluded from the public repo
+legal/
+patents/
+outreach/
+BUSINESS_PIPELINE.txt
+build_cython.py
+build_protected.py
+
+# Data and experiment artifacts (too large, not needed for reuse)
+data/
+experiments/results/
+experiments/kaggle_v1_results/
+kaggle_v1_results/
+results/
+*.pkl
+*.pt
+*.pth
+*.h5
+*.hdf5
+*.npy
+*.npz
+*.csv
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+build/
+dist/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.coverage
+htmlcov/
+
+# Virtual envs
+.venv/
+venv/
+env/
+.env
+.env.local
+
+# IDEs / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Notebooks checkpoints
+.ipynb_checkpoints/
+
+# Cython build artifacts
+*.c
+*.pyd

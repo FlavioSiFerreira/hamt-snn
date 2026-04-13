@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hamt"
+version = "0.1.0"
+description = "Habituation-Aware Metabolic Training for spiking neural networks"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "Flavio Da Silva Ferreira"},
+]
+keywords = ["spiking-neural-network", "energy-efficiency", "neuromorphic", "habituation", "snntorch"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "torch>=2.0.0",
+    "snntorch>=0.9.0",
+    "numpy>=1.24.0",
+]
+
+[project.optional-dependencies]
+datasets = ["tonic>=1.6.0"]
+viz = ["matplotlib>=3.7.0"]
+full = ["tonic>=1.6.0", "matplotlib>=3.7.0", "pandas>=2.0.0"]
+
+[project.urls]
+Repository = "https://github.com/FlavioSiFerreira/hamt-snn"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["hamt*"]
