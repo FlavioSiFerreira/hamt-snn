@@ -18,7 +18,6 @@ src/                   Alternative reference implementation (habituation_module,
 experiments/           Local GPU training scripts (ablation, MNIST, Fashion-MNIST, EMNIST, neuromorphic)
 kaggle/                Kaggle T4 variants (long training, SHD, Fashion-MNIST, activity decay, synaptic depression)
 demo/                  15-minute Fashion-MNIST proof script
-research/              Design notes (biological mechanisms, cross-sample habituation, research plan)
 BENCHMARK_REPORT.txt   Consolidated results across all runs
 pyproject.toml         Package metadata
 requirements.txt       Runtime dependencies
